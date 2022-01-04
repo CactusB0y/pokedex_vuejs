@@ -3,14 +3,38 @@
     <div class="flex justify-between items-center h-full">
       <h1 class="text-4xl ml-10">Pokédex</h1>
       <div class="h-full w-1/3 mr-10 flex items-center justify-center">
-        <h1 class="text-4xl text-white">Kanto</h1>
+        <a  @click="clickLeft()" class="text-white text-2xl mr-10">{{left}}</a>
+        <h1 class="text-4xl text-white">{{r}}</h1>
+        <a @click="clickRight()" class="text-white text-2xl ml-10">{{right}}</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapState } from 'vuex';
+export default {
+  name: 'Banner',
+  data(){
+    return{
+      left: '<-',
+      right: '->'
+    }
+  },
+  methods:{
+    clickRight(){
+      this.$store.commit('SET_R')
+    },
+    clickLeft(){
+      this.$store.commit('SET_L')
+    }
+  },
+  computed:{
+    ...mapState([
+      'r'
+    ])
+  }
+};
 </script>
 
 <style>
