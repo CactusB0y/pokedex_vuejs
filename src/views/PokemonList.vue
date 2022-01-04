@@ -1,8 +1,6 @@
 <template>
 <div>
     <div>
-        <label class="absolute top-40 left-10 mt-2" for="">search: </label>
-        <input class="border-none hover:border-black absolute top-40 left-40 rounded-xl p-2" v-model="search" type="text">
         <img class="absolute top-72 left-64" :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${idSprite}.png`" alt="">
     </div>
     <div style="width: 38%" class="absolute top-36 right-3 ">

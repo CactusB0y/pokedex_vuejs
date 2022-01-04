@@ -8,6 +8,9 @@
         <a @click="clickRight()" class="text-white text-2xl ml-10">{{right}}</a>
       </div>
     </div>
+    <div class="flex w-full justify-end">
+      <span v-hotkey='keymap' class="mr-24">use left and right arrow to switch region</span>
+    </div>
   </div>
 </template>
 
@@ -32,7 +35,13 @@ export default {
   computed:{
     ...mapState([
       'r'
-    ])
+    ]),
+    keymap() {
+        return {
+          left : this.clickLeft,
+          right : this.clickRight
+        }
+      }
   }
 };
 </script>
